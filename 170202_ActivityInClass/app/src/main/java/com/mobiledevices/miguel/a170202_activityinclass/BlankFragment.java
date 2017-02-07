@@ -4,9 +4,11 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -51,7 +53,6 @@ public class BlankFragment extends Fragment {
         return fragment;
     }
 
-    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
@@ -60,21 +61,35 @@ public class BlankFragment extends Fragment {
         }
     }
 
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank, container, false);
+        View v = inflater.inflate(R.layout.fragment_blank, container, false);
+
+        Button b = (Button) v.findViewById(R.id.button);
+        Button b2 = (Button) v.findViewById(R.id.button2);
+
+
+        // Del fragmento al mundo
+        b.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                mListener.printMessage("ESTO SIRVE");
+            }
+        });
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                printLog();
+            }
+        });
+
+        return v;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+    private void printLog() {
+        Log.d("FRAGMENT", "logic inside the fragment");
     }
 
-    @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
@@ -85,7 +100,6 @@ public class BlankFragment extends Fragment {
         }
     }
 
-    @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
@@ -102,7 +116,6 @@ public class BlankFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void printMessage(String message);
     }
 }
