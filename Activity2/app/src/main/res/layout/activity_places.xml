@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_places"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.mobiledevices.miguel.activity4.PlacesActivity">
+
+    <TextView
+        android:text="Ravioli Ravioli"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView11"
+        android:textSize="22sp"
+        android:textAlignment="center" />
+
+    <Button
+        android:text="Add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addP"
+        android:layout_alignBaseline="@+id/returnPlace"
+        android:layout_alignBottom="@+id/returnPlace"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="48dp" />
+
+    <Button
+        android:text="Return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/returnPlace"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="31dp"
+        android:onClick="toMenu" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/map"
+        android:id="@+id/imageView"
+        android:cropToPadding="false"
+        android:adjustViewBounds="true"
+        android:layout_above="@+id/addP"
+        android:layout_alignParentStart="true" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/imageView"
+        android:layout_below="@+id/textView11"
+        android:layout_alignParentEnd="true"
+        android:background="@android:color/holo_green_light">
+
+    </FrameLayout>
+
+    <TextView
+        android:text="Tacos de Perro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_above="@+id/imageView"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Ir a por tacos a este lugar."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_above="@+id/textView4"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Note 10/01/16"
+        android:layout_width="match_parent"
+        android:id="@+id/textView2"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textStyle="normal|bold"
+        android:textSize="22sp"
+        android:layout_above="@+id/textView3"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

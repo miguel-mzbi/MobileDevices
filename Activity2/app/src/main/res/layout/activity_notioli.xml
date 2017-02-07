@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_notioli"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.mobiledevices.miguel.activity4.NotioliActivity">
+
+    <TextView
+        android:text="Ravioli Ravioli"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView10"
+        android:textSize="22sp"
+        android:textAlignment="center" />
+
+    <Button
+        android:text="Add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addN"
+        android:layout_alignBaseline="@+id/returnPlace"
+        android:layout_alignBottom="@+id/returnPlace"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="48dp" />
+
+    <Button
+        android:text="Return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/returnPlace"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="31dp"
+        android:onClick="toMenu" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/textView5"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/textView6"
+        android:background="@android:color/holo_orange_light">
+
+    </FrameLayout>
+
+    <TextView
+        android:text="Note 10/01/16"
+        android:layout_width="match_parent"
+        android:id="@+id/textView5"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textStyle="normal|bold"
+        android:textSize="22sp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/textView10"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Vi unos hermosos zapatos. Buscar similares."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
