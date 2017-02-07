@@ -9,14 +9,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.security.PrivateKey;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Properties;
 
-import static android.R.id.edit;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -103,6 +104,55 @@ public class MainActivity extends AppCompatActivity {
             FileOutputStream fos = openFileOutput(MY_FILE, Context.MODE_PRIVATE);
             properties.storeToXML(fos, null);
             fos.close();
+
+        } catch(IOException ioe) {
+
+            ioe.printStackTrace();
+        }
+    }
+
+    public void loadRawFile(View v){
+
+        try {
+
+            // Open indexed file
+            InputStream is = getResources().openRawResource(R.raw.file1);
+            // Load to stream (Input)
+            InputStreamReader isr = new InputStreamReader(is);
+            // Load to buffer
+            BufferedReader br = new BufferedReader(isr);
+
+            String pre;
+            String contenido = "";
+            while((pre = br.readLine()) != null) {
+
+                contenido += " " + pre;
+            }
+            Log.d("RAW", contenido);
+            Toast.makeText(this, contenido, Toast.LENGTH_SHORT).show();
+
+        } catch(IOException ioe) {
+
+            ioe.printStackTrace();
+        }
+    }
+
+    public void loadAssetFile(View v){
+
+        try {
+
+            // Open non-indexed file in assets
+            InputStream is = getAssets().open("file2.txt");
+            // Load to stream (Input)
+            InputStreamReader isr = new InputStreamReader(is);
+            // Load to buffer
+            BufferedReader br = new BufferedReader(isr);
+
+            String contenido;
+            while((contenido = br.readLine()) != null) {
+
+                Log.d("ASSET:", contenido);
+            }
 
         } catch(IOException ioe) {
 
