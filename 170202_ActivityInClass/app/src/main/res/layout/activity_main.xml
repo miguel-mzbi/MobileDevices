@@ -10,22 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.mobiledevices.miguel.a170202_activityinclass.MainActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp">
-
-        <fragment
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:name="com.mobiledevices.miguel.a170202_activityinclass.BlankFragment"
-            android:id="@+id/fragment2"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
-    </RelativeLayout>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,5 +17,32 @@
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Remove Fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/b_remove_fragment"
+        android:layout_below="@+id/b_add_fragment"
+        android:layout_alignParentStart="true"
+        android:onClick="removeFragment" />
+
+    <Button
+        android:text="Add Fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/b_add_fragment"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:onClick="addFragment" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/b_remove_fragment"
+        android:id="@+id/lay_fragment">
+
+    </RelativeLayout>
 
 </RelativeLayout>
