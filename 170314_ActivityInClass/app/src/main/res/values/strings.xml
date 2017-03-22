@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">170314_ActivityInClass</string>
+    <string name="take_photo">Take Nude</string>
+    <string name="save_photo">Save Nude</string>
+    <string name="take_video">Capture Nude Video</string>
+    <string name="toast">Hi!</string>
+</resources>

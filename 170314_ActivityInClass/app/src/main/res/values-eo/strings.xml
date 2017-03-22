@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">170314_AktivekoKlaso</string>
+    <string name="take_photo">Preni Nuda</string>
+    <string name="save_photo">Savi Nuda</string>
+    <string name="take_video">Preni Nuda Video</string>
+    <string name="toast">Saluton!</string>
+</resources>
