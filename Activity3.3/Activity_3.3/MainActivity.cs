@@ -1,19 +1,18 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
-using System;
-using System.Collections.Generic;
-using Android.Runtime;
+using Org.Json;
+using Android.Util;
 
 namespace Activity_3._3
 {
-    [Activity(Label = "Activity", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Activity3.3", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity, JSONRequest.JSONListener
     {
         Button b1;
         ListView lv1;
 
-        public void Listen(JavaList<Post> posts)
+        public void Listen(JSONArray posts)
         {
             JSONAdapter jsonAdapter = new JSONAdapter(this, posts);
             lv1.Adapter = jsonAdapter;
@@ -24,10 +23,10 @@ namespace Activity_3._3
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
-            SetContentView (Resource.Layout.Main);
+            SetContentView(Resource.Layout.Main);
 
-            b1 = FindViewById<Button>(Resource.Id.button1);
-            lv1 = FindViewById<ListView>(Resource.Id.listView1);
+            b1 = FindViewById<Button>(Resource.Id.bt_main_getJson);
+            lv1 = FindViewById<ListView>(Resource.Id.lv_mai_lv);
 
             b1.Click += delegate
             {

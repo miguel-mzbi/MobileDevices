@@ -9,46 +9,47 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Java.Lang;
+using Org.Json;
+using Android.Util;
 
 namespace Activity_3._3
 {
     class JSONAdapter : BaseAdapter
     {
         Activity activity;
-        JavaList<Post> data;
+        JSONArray data;
 
-        public JSONAdapter(Activity activity, JavaList<Post> data)
+        public JSONAdapter(Activity activity, JSONArray data)
         {
             this.activity = activity;
             this.data = data;
         }
 
-        public override int Count => data.Count;
+        public override int Count => data.Length();
 
         public override Java.Lang.Object GetItem(int position)
         {
-            return data[position];
+            return data.GetJSONObject(position);
         }
 
         public override long GetItemId(int position)
         {
-            return data[position].id;
+            return data.GetJSONObject(position).GetInt("id");
         }
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             if (convertView == null)
             {
-                convertView = LayoutInflater.From(this.activity).Inflate(Resource.Layout.JSON_Row, null);
+                convertView = LayoutInflater.From(this.activity).Inflate(Resource.Layout.JSON_row, null);
             }
 
-            TextView rowTitle = this.activity.FindViewById<TextView>(Resource.Id.tv_row_title);
-            TextView rowBody = this.activity.FindViewById<TextView>(Resource.Id.tv_row_body);
-            Post post = (Post)this.GetItem(position);
+            TextView rowTitle = convertView.FindViewById<TextView>(Resource.Id.tv_row_title);
+            TextView rowBody = convertView.FindViewById<TextView>(Resource.Id.tv_row_body);
+            JSONObject post = (JSONObject)this.GetItem(position);
 
-            rowTitle.Text = post.title;
-            rowBody.Text = post.body;
+            rowTitle.Text = post.GetString("title");
+            rowBody.Text = post.GetString("body");
 
             return convertView;
         }

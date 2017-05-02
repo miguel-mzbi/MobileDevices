@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{18C08FFB-05CD-4363-A172-71C69A024B23}</ProjectGuid>
+    <ProjectGuid>{CAD80ABA-1E38-4431-A54D-39DD5AA56055}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Activity_3._3</RootNamespace>
-    <AssemblyName>Activity 3.3</AssemblyName>
+    <AssemblyName>Activity3.3</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
@@ -61,7 +61,6 @@
     <Compile Include="JSONAdapter.cs" />
     <Compile Include="JSONRequest.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="Post.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,7 +69,7 @@
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidResource Include="Resources\layout\JSON_Row.axml">
+    <AndroidResource Include="Resources\layout\JSON_row.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
